@@ -3,17 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="1dp"
-        android:layout_height="11dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -24,7 +18,7 @@
         tools:layout_editor_absoluteY="10dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/nomeCompletoEt"
         android:layout_width="match_parent"
         android:layout_height="39dp"
         android:ems="10"
@@ -32,97 +26,114 @@
         tools:layout_editor_absoluteX="14dp"
         tools:layout_editor_absoluteY="37dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/telefoneTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Telefone" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/telefoneEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:hint="Ex.:12-93456-7890"/>
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/emailTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="E-mail" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/emailEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/selecionadoCb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CheckBox" />
+            android:text="Ingressar na lista de e-mails?"/>
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
 
-        <EditText
-            android:id="@+id/editTextTextPostalAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
+    <TextView
+                    android:id="@+id/sexoTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+    <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/radioRg">
 
-        <EditText
-            android:id="@+id/editTextTextPostalAddress2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
+                     <RadioButton
+                        android:id="@+id/femininoRb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="Feminino" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/masculinoRb"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Masculino" />
+    </RadioGroup>
 
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="13dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="16dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <FrameLayout
+    <TextView
+        android:id="@+id/cidadeTv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="Cidade" />
 
-    </FrameLayout>
+    <EditText
+        android:id="@+id/cidadeEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
 
+    <TextView
+        android:id="@+id/ufTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UF" />
+
+    <Spinner
+        android:id="@+id/opcoesSp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/opcoes"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/limparBt"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Limpar" />
+
+        <Button
+            android:id="@+id/salvarBt"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salvar"/>
+    </LinearLayout>
 
 
 </LinearLayout>
