@@ -40,46 +40,46 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        telefoneEt=findViewById(R.id.telefoneEt);
+        emailEt=findViewById(R.id.emailEt);
+        cidadeEt=findViewById(R.id.cidadeEt);
+        nomeCompletoEt=findViewById(R.id.nomeCompletoEt);
 
+
+        selecionadoCb=findViewById(R.id.selecionadoCb);
+        if (selecionadoCb.isChecked()){
+            formulario.setEmailLista(emailLista =true);
+        }
+
+        radioRg=findViewById(R.id.radioRg);
+        radioRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton button = (RadioButton) group.findViewById(checkedId);
+                genero = button.getText().toString();
+                formulario.setGenero(genero);
+            }
+
+        });
+        opcoesSp=findViewById(R.id.opcoesSp);
+        opcoesSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                uf= ((TextView)view).getText().toString();
+                formulario.setUf(uf);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         salvarBt = findViewById(R.id.salvarBt);
         salvarBt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                telefoneEt=findViewById(R.id.telefoneEt);
-                emailEt=findViewById(R.id.emailEt);
-                cidadeEt=findViewById(R.id.cidadeEt);
-                nomeCompletoEt=findViewById(R.id.nomeCompletoEt);
 
-
-                selecionadoCb=findViewById(R.id.selecionadoCb);
-               if (selecionadoCb.isChecked()){
-                  formulario.setEmailLista(emailLista =true);
-               }
-
-                radioRg=findViewById(R.id.radioRg);
-                radioRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        RadioButton button = (RadioButton) group.findViewById(checkedId);
-                         genero = button.getText().toString();
-                         formulario.setGenero(genero);
-                    }
-
-                });
-                opcoesSp=findViewById(R.id.opcoesSp);
-                opcoesSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        uf= ((TextView)view).getText().toString();
-                        formulario.setUf(uf);
-
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                });
 
 
 
