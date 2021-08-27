@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Cadastro</string>
     <string-array name="opcoes">
+        <item>""</item>
         <item>Acre - AC</item>
         <item>Alagoas - AL</item>
         <item>Amapá - AP</item>

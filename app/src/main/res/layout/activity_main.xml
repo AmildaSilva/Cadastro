@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="5dp"
+    android:id="@+id/linearLayout1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -59,7 +60,7 @@
             android:id="@+id/selecionadoCb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingressar na lista de e-mails?"/>
+            android:text="Ingressar na lista de e-mails:"/>
 
 
     <TextView
@@ -79,7 +80,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:checked="true"
                         android:text="Feminino" />
 
                     <RadioButton
